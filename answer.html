@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Medium</title>
+  </head>
+  <body>
+    <h1 id="medium"></h1>
+
+    <script>
+      // Array de respostas da bola mágica 8
+      var answers = {
+        "pt": ["Sim", "Não", "Talvez", "Provavelmente", "Não posso prever agora", "Definitivamente", "Sem dúvida", "Claro", "Certamente", "Obviamente", "Absolutamente", "É improvável", "Não conte com isso", "Minhas fontes dizem não", "Pergunte novamente mais tarde", "Melhor não te contar agora", "Não posso responder a isso agora", "Concentre-se e pergunte novamente", "Não posso prever agora, tente mais tarde"],
+        "en": ["Yes", "No", "Maybe", "Probably", "Can't predict now", "Definitely", "Without a doubt", "Sure", "Certainly", "Obviously", "Absolutely", "It's unlikely", "Don't count on it", "My sources say no", "Ask again later", "Better not tell you now", "Cannot answer now", "Concentrate and ask again", "Cannot predict now, try again later"],
+        "fr": ["Oui", "Non", "Peut-être", "Probablement", "Je ne peux pas prédire maintenant", "Certainement", "Sans aucun doute", "Sûr", "Certainement", "Évidemment", "Absolument", "C'est peu probable", "Ne comptez pas là-dessus", "Mes sources disent non", "Demandez à nouveau plus tard", "Il vaut mieux pas te le dire maintenant", "Je ne peux pas répondre maintenant", "Concentrez-vous et demandez à nouveau", "Je ne peux pas prédire maintenant, essayez à nouveau plus tard"]
+      }
+
+      var langs = navigator.languages;
+      var lang;
+      for (var i = 0; i < langs.length; i++) {
+          if (answers[langs[i]]) {
+              lang = langs[i];
+              break;
+          }
+      }
+      if (!lang) {
+          lang = "en";
+      }
+
+	  var medium = document.getElementById("medium");
+	  
+      // Selecionar uma resposta aleatória
+      var randomAnswer = answers[lang][Math.floor(Math.random() * answers[lang].length)];
+
+      // Atualizar o conteúdo da tag h1 com a resposta aleatória
+      medium.textContent = randomAnswer;
+    </script>
+  </body>
+</html>
